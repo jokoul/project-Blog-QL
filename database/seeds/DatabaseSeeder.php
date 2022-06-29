@@ -3,6 +3,7 @@
 use App\User;
 use Illuminate\Database\Seeder;
 use App\Topic;
+use App\Post;
 
 class DatabaseSeeder extends Seeder
 {
@@ -19,5 +20,7 @@ class DatabaseSeeder extends Seeder
         Topic::create(['name' => 'Featured Sites', 'slug' => 'featured']);
         Topic::create(['name' => 'Useful Links', 'slug' => 'links']);
         Topic::create(['name' => 'Guides & Tutorials', 'slug' => 'tutorials']);
+
+        factory(Post::class, 20)->create();
     }
 }
