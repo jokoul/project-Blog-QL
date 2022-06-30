@@ -11,7 +11,7 @@ scalar DateTimeTz
 
 type Query {
     users: [User!]! @paginate(defaultCount: 10) #@paginate are directive wich come from nuwave/Lighthouse library
-    user(id: ID @eq): User @find #@eq directive means filter in db 'WHERE'  id is equal to the passed ID in value. @find just means to look for and pull all entries wich comply to the @eq condition.
+    user(id: ID! @eq): User @find #@eq directive means filter in db 'WHERE'  id is equal to the passed ID in value. @find just means to look for and pull all entries wich comply to the @eq condition.
     posts: [Post!]! @all #@all is a directive wich means mimics all method of every single model.
     post(id: ID! @eq): Post! @find
     topic(slug: String! @eq): Topic @find
@@ -21,6 +21,7 @@ type User {
     id: ID!
     name: String!
     email: String!
+    avatar: String!
     created_at: DateTime!
     updated_at: DateTime!
     # We shouldn't show private data like password , notice that it's not retireve there
