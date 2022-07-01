@@ -12,16 +12,16 @@
             By
             <router-link
                 :to="{ name: 'author', params: { id: post.author.id } }"
-                class="underline hover:text-black"
+                class="underline hover:text-orange-400"
                 >{{ post.author.name }}</router-link
             >
             &nbsp;· in
             <router-link
                 :to="{ name: 'topic', params: { slug: post.topic.slug } }"
-                class="underline hover:text-black"
+                class="underline hover:text-orange-400"
                 >{{ post.topic.name }}</router-link
             >
-            &nbsp; &middot; 3 hours ago
+            &nbsp; &middot; {{ post.created_at | timeago }}
         </div>
     </div>
 </template>

@@ -1,12 +1,16 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
+import moment from "moment";
+
 import "./bootstrap";
+
 import PostList from "./PostList";
 import Post from "./Post";
 import ApolloClient from "apollo-boost";
 import VueApollo from "vue-apollo";
 import TopicPostList from "./TopicPostList";
 import AuthorPostList from "./AuthorPostList";
+import NotFound from "./NotFound";
 
 window.Vue = Vue;
 Vue.use(VueRouter); //we add vue router as a plugin to our Vue application
@@ -36,6 +40,11 @@ const routes = [
         name: "author",
         component: AuthorPostList,
     },
+    {
+        path: "*",
+        name: "404",
+        component: NotFound,
+    },
 ];
 
 //Create an ApolloClient instance
@@ -54,6 +63,10 @@ const router = new VueRouter({
     mode: "history",
     routes,
 });
+
+//Creation of a vue filter
+Vue.filter("timeago", (value) => moment(value).fromNow());
+Vue.filter("longDate", (value) => moment(value).format("MMMM Do YYYY")); //Check moment node library doc to get more details
 
 //We add the router to our application wich is a vue instance
 const app = new Vue({

@@ -1,5 +1,8 @@
 <template>
-    <div class="container mx-auto px-4 w-full md:w-3/4 lg:w-3/5 xl:w-1/2 my-20">
+    <div
+        class="container mx-auto px-4 w-full md:w-3/4 lg:w-3/5 xl:w-1/2 mt-2 mb-64"
+    >
+        <Header></Header>
         <h2 class="text-4xl">
             <router-link
                 :to="{ name: 'index' }"
@@ -29,10 +32,12 @@
 <script>
 import gql from "graphql-tag";
 import PostListItem from "./components/PostListItem.vue";
+import Header from "./components/Header.vue";
 
 export default {
     components: {
         PostListItem,
+        Header,
     },
     apollo: {
         //Here gql fn is used before graphql query to compile it first and convert it to an AST (Abstract Syntax Tree)

@@ -1,5 +1,8 @@
 <template>
-    <div class="container mx-auto px-4 w-full md:w-3/4 lg:w-3/5 xl:w-1/2 mt-20">
+    <div
+        class="container mx-auto px-4 w-full md:w-3/4 lg:w-3/5 xl:w-1/2 mt-2 mb-0"
+    >
+        <Header></Header>
         <div>
             <div v-if="$apollo.loading">Loading...</div>
             <div v-else>
@@ -10,10 +13,10 @@
                             name: 'topic',
                             params: { slug: post.topic.slug },
                         }"
-                        class="underline hover:text-black"
+                        class="underline hover:text-orange-400"
                         >{{ post.topic.name }}</router-link
                     >
-                    · 3 hours ago
+                    · {{ post.created_at | timeago }}
                 </div>
                 <h1 class="text-5xl mt-10 font-bold mb-12">{{ post.title }}</h1>
                 <p class="text-gray-700 pb-3 mb-12 whitespace-pre-line">
@@ -36,7 +39,7 @@
                                     name: 'author',
                                     params: { id: post.author.id },
                                 }"
-                                class="underline hover:text-black"
+                                class="underline hover:text-orange-400"
                                 >{{ post.author.name }}</router-link
                             >
                         </div>
@@ -47,22 +50,29 @@
                                     name: 'topic',
                                     params: { slug: post.topic.slug },
                                 }"
-                                class="underline hover:text-black"
+                                class="underline hover:text-orange-400"
                                 >{{ post.topic.name }}</router-link
                             >
-                            on June 30, 2022
+                            on {{ post.created_at | longDate }}
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <Footer></Footer>
     </div>
 </template>
 
 <script>
 import gql from "graphql-tag"; //for compiling the graphql query, we use the template literal fn
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer";
 
 export default {
+    components: {
+        Header,
+        Footer,
+    },
     apollo: {
         post: {
             //the name of the query "post" become a property of a component and can be use in template tag
@@ -72,6 +82,7 @@ export default {
                         id
                         title
                         content
+                        created_at
                         author {
                             id
                             name
@@ -88,6 +99,9 @@ export default {
                 return {
                     id: this.$route.params.id,
                 };
+            },
+            error() {
+                this.$router.push({ name: "404" }); //we redirect on the 404 route
             },
         },
     },
