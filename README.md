@@ -2,7 +2,7 @@
 
 ## Description
 
-This is a dynamic Blog website made with Vue, Laravel, Tailwindcss and GraphQL. First I start creating my database with laravel and GraphQL. I define my models, migrations and graphql schema. I set graphql-playground library and nuwave/lighthouse library to test and check my database queries in DB browser SQlite. I use DatabaseSeeder class and factory method to create fake content for development purpose. To finish, I achieved the User Interface by creating reusable vue components and stylized with Tailwindcss.
+This is a dynamic Blog website made with Vue, Laravel, Tailwindcss and GraphQL. First I start creating my database with laravel and GraphQL. I define my models, migrations and graphql schema. I set graphql-playground library and nuwave/lighthouse library to test and check my database queries in DB browser SQlite. I use DatabaseSeeder class and factory method to create fake content for development purpose. To finish, I achieved the User Interface by creating reusable vue components and stylize them with Tailwindcss.
 
 ## Stack
 
