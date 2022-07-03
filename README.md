@@ -1,4 +1,4 @@
-# project-32-Blog-QL
+# project-Blog-QL
 
 ## Description
 
