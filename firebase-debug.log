@@ -1,0 +1,28 @@
+[debug] [2022-07-02T19:13:53.727Z] ----------------------------------------------------------------------
+[debug] [2022-07-02T19:13:53.730Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\joank\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase deploy
+[debug] [2022-07-02T19:13:53.730Z] CLI Version:   3.18.2
+[debug] [2022-07-02T19:13:53.730Z] Platform:      win32
+[debug] [2022-07-02T19:13:53.730Z] Node Version:  v16.13.1
+[debug] [2022-07-02T19:13:53.732Z] Time:          Sat Jul 02 2022 21:13:53 GMT+0200 (heure d’été d’Europe centrale)
+[debug] [2022-07-02T19:13:53.732Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2022-07-02T19:13:53.752Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2022-07-02T19:13:53.753Z] > authorizing via signed-in user
+[debug] [2022-07-02T19:13:53.759Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2022-07-02T19:13:53.760Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ {
+  refresh_token: '1//03npzOyTCSGiqCgYIARAAGAMSNwF-L9Irw9XZz8-v-HeIGNZriHZ5qixQSZES3DaQXc3zalwzmtSmMUQn1e0bT7O08qTuUzbBwy4',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid'
+} 
+ Sat Jul 02 2022 21:13:53 GMT+0200 (heure d’été d’Europe centrale)
+[debug] [2022-07-02T19:13:53.946Z] <<< HTTP RESPONSE 200
+[debug] [2022-07-02T19:13:54.064Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/blog-ql-jo  
+  
+ Sat Jul 02 2022 21:13:54 GMT+0200 (heure d’été d’Europe centrale)
+[debug] [2022-07-02T19:14:15.275Z] Error: connect ETIMEDOUT 104.197.85.31:443
+    at TCPConnectWrap.afterConnect [as oncomplete] (node:net:1161:16)
+[error] 
+[error] Error: Server Error. connect ETIMEDOUT 104.197.85.31:443
