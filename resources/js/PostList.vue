@@ -7,7 +7,7 @@
         <!-- <div>Loading: {{ $apollo.loading }}</div>
         <div>Is posts loading: {{ $apollo.queries.posts.loading }}</div>
         <div>{{ posts }}</div> -->
-        <div v-if="$apollo.loading"></div>
+        <div v-if="$apollo.loading">Loading...</div>
         <div v-else>
             <PostListItem
                 v-for="post in posts"
